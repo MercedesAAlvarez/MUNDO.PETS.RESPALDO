@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head',{title: 'Detalle de Producto' }) %>
+
+    <body class="detalle">
+
+        <%- include('./partials/header') %>
+
+            <main>
+                <section class="productoPrincipal">
+                    <div class="imagen-princ">
+                        <img src="/img/<%= producto.imagen %> " alt=" ">
+                    </div>
+                    <section>
+                        <div class="textoDerecha">
+                            <div>
+                                <h1>
+                                    <%= producto.titulo %>
+                                </h1>
+                                <div class="prec-desc">
+                                    <p class="precio">$ <%= producto.precio %></p>
+                                    <p class="descuento"><%= producto.descuento %> %</p>
+                                </div>
+                                <p class="card-discount">$ <%= producto.precio - (producto.precio * producto.descuento/ 100) %></p>
+                            
+                            </div>
+                            </div>
+                            <div>
+                                <div class="sumar-carrito">
+                                    <!-- boton de cantidad -->
+                                    <input value="<%= producto.stock %>" id="stockOculto" />
+                                    <div class="restar" id="decrease">-</div>
+                                    <input type="number" id="contador" value="1">
+                                    <div class="agregar" id="increase">+</div>
+                                </div>
+                                <!-- boton de agregar al carrito -->
+                                <a href="/productos/carrito"><button class="princip">Añadir al carrito</button></a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                    <section class="detail">
+                        <h2>Detalle del producto</h2>
+                        <p><%= producto.descripcion %></p>
+                    </section>
+                    <section class="productosRelacionados">
+                        <h2>Productos Relacionados</h2>
+                        <% for( let i=0; i < 4; i++ ) { %>
+                    </section>
+                    <article>
+                            <div class="contenedor">
+                            <a href="/productos/detalle/<%=productos[i].id %>">
+                            </div>
+                            <div class="prod-rel">
+                                <img src="/img/<%= productos[i].imagen %>" alt="">
+                            </div>
+                            <div>
+                                <p class="pre">$<%= productos[i].precio %></p>
+                            </div>
+                            <div>
+                                <h4>
+                                <%= productos[i].titulo %>
+                                </h4>
+                            </div>
+                            <div>
+                                <button>añadir al carrito</button>
+                            </div>          
+                        </article>
+                        </a>
+                     <% } %>
+            </main>
+            <%- include('./partials/footer') %>
+            <script src="/javascripts/increase.js"></script>
+    </body>
+
+</html>
