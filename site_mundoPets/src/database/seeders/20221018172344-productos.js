@@ -3,7 +3,7 @@
 let listado = require('../../data/productos.json')
 
 let listadoCategorias = ["Perro","Gato"]
-let listadosubCategorias = ["juguetes","alimentos"]
+let listadosubCategorias = ["juguetes","alimento"]
 let marcas = ['Royal Canin','Agility','VitalCan','Excellent','Cat Selection','Infinity','Pro Plan','Dog Selection','Eukanuba','Biopet']
 
 let productos = []
