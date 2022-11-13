@@ -13,7 +13,7 @@
     <% if (locals.usuarioLogin) { %>
       <a href="/usuarios/perfil"> Bienvenid@ <%=locals.usuarioLogin.nombre %></a>
     <% } else { %>
-      <a href="/usuarios/login"> <i class="fas fa-user"></i> </a>
+      <li><a href="/usuarios/login"><i class="fas fa-user"></i></a></li>
       <% } %>
   </div>
   <div class="register">
@@ -32,7 +32,7 @@
   </div>
    
   <div class="admin">
-    <% if (locals.usuarioLogin && locals.usuarioLogin.roles_id === 1 ) { %>
+    <% if (locals.usuarioLogin && (locals.usuarioLogin.rol) === 1 ) { %>
       <li><a href="/admin/lista">ADMIN</a></li>  
     <% } %>
   </div>

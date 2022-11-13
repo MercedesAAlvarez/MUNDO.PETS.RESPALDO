@@ -8,7 +8,7 @@ let usuarios = listado.map(usuario => {
     apellido: usuario.apellido,
     email: usuario.email,
     contraseña: usuario.contrasenia,
-    contacto: 125263,
+    contacto:null,
     ciudad: usuario.ciudad,
     genero: usuario.genero,
     imagen: usuario.imagen,
